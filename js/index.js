@@ -56,13 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.forEach(function(link) {
             // Clean up old active states
             link.classList.remove('active', 'text-primary', 'font-bold');
-            
-            // Re-apply default text color based on link type (desktop vs mobile handling)
-            // Note: simple toggle of classes is easier than checking type, as CCS handles specifics if we just remove 'active'
-            // But we must respect the original base classes logic if present.
-            // Simplified: Remove active-specific/color classes, let CSS or base classes handle default.
-            // The original code was adding 'text-slate-600' explicitly. We'll stick to that pattern for desktop consistency.
-            
             if (!link.classList.contains('mobile-link')) {
                  link.classList.add('text-slate-600', 'dark:text-slate-300');
             } else {
